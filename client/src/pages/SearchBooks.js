@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import { useMutation } from "@apollo/client";
-import { SAVE_BOOK } from "../../utils/mutations";
+import { SAVE_BOOK } from "../utils/mutations.js";
 
 import {
   Jumbotron,
@@ -32,7 +32,7 @@ const SearchBooks = () => {
     return () => saveBookIds(savedBookIds);
   });
 
-  const [saveBook, { error }] = useMutation(SAVE_BOOK);
+  const [saveBook] = useMutation(SAVE_BOOK);
 
   // create method to search for books and set state on form submit
   const handleFormSubmit = async (event) => {
@@ -82,7 +82,7 @@ const SearchBooks = () => {
       const { data } = await saveBook({
         variables: { ...userData },
       });
-
+      console.log({ data });
       // useParams({ data })
 
       setUserData({ ...userData });
