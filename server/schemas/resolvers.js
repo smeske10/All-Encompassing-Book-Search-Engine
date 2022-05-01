@@ -44,14 +44,16 @@ const resolvers = {
     },
     saveBook: async (
       parent,
-      { title, authors, description, link },
+      { bookId, title, authors, description, image, link },
       context
     ) => {
       if (context.user) {
         const book = await Book.create({
+          bookId,
           title,
           authors,
           description,
+          image,
           link,
         });
 

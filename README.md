@@ -26,23 +26,24 @@ Refer to [https://choosealicense.com/](https://choosealicense.com/).
 To install this application, please follow the steps below:
 
 1. In the integrated terminal, on the parent, frontend_react and backend-sanity directories, run `npm i`
-2. In the frontend_react terminal, run `npm run start`
+2. In the frontend_react terminal, run `npm run develop`
 3. Once the application starts, explore the features in Chrome
 
 - EXTENSIONS:
   - ReactJS
   - React-dom
-  - Sanity Client
+  - Apollo
+  - Mongoose
+  - JSON Web Token
 
 ## Usage
 
 - GitHub: https://github.com/smeske10/React-Coding-Portfolio
-
-![Landing Page](./frontend_react/src/assets/Screenshot.png)
+- Application (https://arcane-tor-05341.herokuapp.com/)
 
 ## Credits
 
-- This application uses [ReactJS](https://reactjs.org/docs/getting-started.html) and [Sanity](https://www.sanity.io/) to create a full stack web application.
+- This application uses [ReactJS](https://reactjs.org/docs/getting-started.html) and [Mongoose](https://mongoosejs.com/) to create a full stack web application.
 
 ## Questions
 

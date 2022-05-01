@@ -16,7 +16,6 @@ import {
 import Auth from "../utils/auth";
 import { searchGoogleBooks } from "../utils/API";
 import { saveBookIds, getSavedBookIds } from "../utils/localStorage";
-// import { useParams } from "react-router-dom";
 
 const SearchBooks = () => {
   const [searchedBooks, setSearchedBooks] = useState([]);
@@ -70,7 +69,6 @@ const SearchBooks = () => {
   const handleSaveBook = async (bookId) => {
     // find the book in `searchedBooks` state by the matching id
     const bookToSave = searchedBooks.find((book) => book.bookId === bookId);
-
     // get token
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
@@ -79,11 +77,11 @@ const SearchBooks = () => {
     }
 
     try {
-      const { data } = await saveBook({
-        variables: { ...userData },
+      await saveBook({
+        variables: {
+          input: bookToSave,
+        },
       });
-      console.log({ data });
-      // useParams({ data })
 
       setUserData({ ...userData });
 
